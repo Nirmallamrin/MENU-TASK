@@ -18,6 +18,12 @@ const Header = () => {
             Menu
           </Link>
           <Link
+            to="/manage-menu"
+            className="hover:text-cyan-600 transition-colors"
+          >
+            Menu Manager
+          </Link>
+          <Link
             to="/registration"
             className="hover:text-cyan-600 transition-colors"
           >
@@ -25,12 +31,6 @@ const Header = () => {
           </Link>
           <Link to="/contact" className="hover:text-cyan-600 transition-colors">
             Contact Us
-          </Link>
-          <Link
-            to="/manage-menu"
-            className="hover:text-cyan-600 transition-colors"
-          >
-            Menu Manager
           </Link>
         </nav>
       </div>
