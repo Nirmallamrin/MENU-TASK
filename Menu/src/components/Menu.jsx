@@ -9,7 +9,9 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/menu"); 
+        const response = await axios.get(
+          "https://menu-task.onrender.com/api/menu"
+        ); 
         if (Array.isArray(response.data)) {
           setMenus(response.data);
         } else {
@@ -28,7 +30,7 @@ const Menu = () => {
     const fetchItems = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/api/menu/${selectedMenu._id}/items` 
+          `https://menu-task.onrender.com/api/menu/${selectedMenu._id}/items`
         );
         setItems(data);
       } catch (error) {

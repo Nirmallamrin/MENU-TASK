@@ -30,13 +30,16 @@ const ManageMenu = () => {
 
   const handleAddMenuItem = async () => {
     try {
-      const { data } = await axios.post("http://localhost:3000/api/menu/item", {
-        title: itemtitle,
-        name: itemName,
-        description: itemDescription,
-        price: itemPrice,
-        menuId: selectedMenu,
-      });
+      const { data } = await axios.post(
+        "https://menu-task.onrender.com/api/menu/item",
+        {
+          title: itemtitle,
+          name: itemName,
+          description: itemDescription,
+          price: itemPrice,
+          menuId: selectedMenu,
+        }
+      );
       setItems((prevItems) => [...prevItems, data]);
       setTitle("")
       setItemName("");
@@ -50,7 +53,9 @@ const ManageMenu = () => {
 
   const selectingMenus = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/api/menu");
+      const { data } = await axios.get(
+        "https://menu-task.onrender.com/api/menu"
+      );
       setMenus(data);
       
     } catch (error) {
@@ -166,3 +171,4 @@ const ManageMenu = () => {
 };
 
 export default ManageMenu;
+
