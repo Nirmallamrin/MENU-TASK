@@ -13,7 +13,7 @@ const app = express();
 const Port = process.env.PORT || 3000
 
 app.use(express.json());
-
+app.use(cors())
 app.use("/api/menu", menuRoute)
 
 app.get("/", (req, res) => {

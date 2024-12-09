@@ -42,8 +42,8 @@ export const getAllMenus = async (req, res) => {
 
 export const addMenuItem = async (req, res) => {
 try {
-    const { name, description, price, menuId } = req.body;
-    const newItem = new MenuItem({ name, description, price });
+    const { title,name, description, price, menuId } = req.body;
+    const newItem = new MenuItem({ title,name, description, price });
     
     await newItem.save();
 

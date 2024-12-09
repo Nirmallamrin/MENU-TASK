@@ -6,7 +6,9 @@ const Header = () => {
   return (
     <header className="bg-slate-950 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
-        <div className="text-2xl font-bold text-blue-400">DeepNetSoft</div>
+        <div className="text-2xl font-bold text-blue-400">
+          <Link to="/">DeepNetSoft</Link>
+        </div>
 
         <nav className="space-x-6 text-lg">
           <Link to="/" className="hover:text-cyan-600 transition-colors">
@@ -24,7 +26,10 @@ const Header = () => {
           <Link to="/contact" className="hover:text-cyan-600 transition-colors">
             Contact Us
           </Link>
-          <Link to="/manage-menu" className="hover:text-cyan-600 transition-colors">
+          <Link
+            to="/manage-menu"
+            className="hover:text-cyan-600 transition-colors"
+          >
             Menu Manager
           </Link>
         </nav>
