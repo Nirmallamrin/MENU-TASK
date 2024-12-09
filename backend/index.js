@@ -14,7 +14,7 @@ const Port = process.env.PORT || 3000
 
 app.use(express.json());
 
-app.use("/api/menu",menuRoute)
+app.use("/api/menu", menuRoute)
 
 app.get("/", (req, res) => {
   res.send("Hello Worlddzzzzz!");

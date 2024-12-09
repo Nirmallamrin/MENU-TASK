@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "custom-image": "url('/src/assets/img1.jpg')", // Update the path accordingly
+        "custom-image": "url('/src/assets/IMGmenu.jpg')", // Update the path accordingly
       },
     },
   },

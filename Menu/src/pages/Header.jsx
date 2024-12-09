@@ -24,6 +24,9 @@ const Header = () => {
           <Link to="/contact" className="hover:text-cyan-600 transition-colors">
             Contact Us
           </Link>
+          <Link to="/manage-menu" className="hover:text-cyan-600 transition-colors">
+            Menu Manager
+          </Link>
         </nav>
       </div>
     </header>
