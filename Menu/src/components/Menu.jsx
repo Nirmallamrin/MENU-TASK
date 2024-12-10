@@ -47,7 +47,7 @@ const Menu = () => {
 
   return (
     <div className="p-6 bg-custom-image bg-cover bg-center min-h-screen flex flex-col items-center">
-      <h1 className="text-3xl font-bold text-center text-white mb-4">MENU</h1>
+      <h1 className="text-5xl font-bold text-center text-black mb-4">OUR MENU</h1>
 
       <p className="text-lg text-center text-white mb-8">
         Discover our delicious selection of food, refreshing drinks, and
