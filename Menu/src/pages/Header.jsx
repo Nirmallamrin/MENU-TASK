@@ -7,7 +7,7 @@ const Header = () => {
     <header className="bg-slate-950 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="text-2xl font-bold text-blue-400">
-          <Link to="/">DeepNetSoft</Link>
+          <Link to="/">Your Chef</Link>
         </div>
 
         <nav className="space-x-6 text-lg">
