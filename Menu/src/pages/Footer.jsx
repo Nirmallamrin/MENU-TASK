@@ -7,21 +7,21 @@ const Footer = () => {
       <div className="flex flex-col items-center md:flex-row justify-around mb-6">
         <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-2">CONNECT WITH US</h3>
-          <p className="text-sm">+91 9561843340</p>
+          <p className="text-sm">+91 9568423355</p>
         </div>
         <div className="text-center md:text-left">
-          <h1 className="text-2xl font-bold">DEEP NET SOFT</h1>
+          <h1 className="text-2xl font-bold">YOUR CHEF</h1>
         </div>
         <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-2">FIND US</h3>
           <p className="text-sm">
-            First floor, Geo infopark, Infopark EXPY, Kakkanad
+            First floor, USA Building, USA.
           </p>
         </div>
       </div>
       <footer className="text-center">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} Deepnetsoft Solutions. All rights
+          &copy; 2024 Your Chef. All rights
           reserved.
         </p>
         <div className="flex justify-center space-x-4 mt-2">
