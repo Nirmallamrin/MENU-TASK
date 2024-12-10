@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Menu = () => {
-  const [menus, setMenus] = useState([]); 
+  const [menus, setMenus] = useState([]);
   const [items, setItems] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState(null);
 
@@ -11,7 +11,7 @@ const Menu = () => {
       try {
         const response = await axios.get(
           "https://menu-task.onrender.com/api/menu"
-        ); 
+        );
         if (Array.isArray(response.data)) {
           setMenus(response.data);
         } else {
@@ -42,12 +42,14 @@ const Menu = () => {
   }, [selectedMenu]);
 
   const handleNavigation = (menu) => {
-    setSelectedMenu(menu); 
+    setSelectedMenu(menu); // Set the selected menu
   };
 
   return (
     <div className="p-6 bg-custom-image bg-cover bg-center min-h-screen flex flex-col items-center">
-      <h1 className="text-5xl font-bold text-center text-black mb-4">OUR MENU</h1>
+      <h1 className="text-5xl font-bold text-center text-black mb-4">
+        OUR MENU
+      </h1>
 
       <p className="text-lg text-center text-white mb-8">
         Discover our delicious selection of food, refreshing drinks, and
@@ -59,7 +61,11 @@ const Menu = () => {
           menus.map((menu) => (
             <button
               key={menu._id}
-              className="px-6 py-2 bg-black text-white rounded hover:bg-blue-600 transition-colors"
+              className={`px-6 py-2 rounded transition-colors ${
+                selectedMenu?._id === menu._id
+                  ? "bg-blue-600 text-white"
+                  : "bg-black text-white hover:bg-blue-600"
+              }`}
               onClick={() => handleNavigation(menu)}
             >
               {menu.name}
@@ -79,7 +85,6 @@ const Menu = () => {
           </div>
         )}
 
-        
         {items.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2">
             {items.map((item) => (

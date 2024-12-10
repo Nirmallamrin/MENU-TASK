@@ -14,10 +14,13 @@ const ManageMenu = () => {
 
   const handleAddMenu = async () => {
     try {
-      const { data } = await axios.post("http://localhost:3000/api/menu", {
-        name,
-        description,
-      });
+      const { data } = await axios.post(
+        "https://menu-task.onrender.com/api/menu",
+        {
+          name,
+          description,
+        }
+      );
       setMenus((prevMenus) => [...prevMenus, data]);
       setName("");
       setDescription("");
@@ -153,18 +156,7 @@ const ManageMenu = () => {
           </button>
         </div>
 
-        {/* <div>
-                <h3 className="text-lg font-semibold mb-2">Menu Items</h3>
-                <ul className="list-disc pl-5">
-                    {items.map((item, index) => (
-                        <li key={index} className="mb-2">
-                            <p className="font-medium">Name: {item.name}</p>
-                            <p className="text-gray-600">Description: {item.description}</p>
-                            <p className="text-gray-600">Price: {item.price}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div> */}
+
       </div>
     
   );

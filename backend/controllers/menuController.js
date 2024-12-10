@@ -82,4 +82,73 @@ export const getItems = async (req, res) => {
   }
 };
 
+export const editMenu = async (req, res) => {
+  try {
+    const currentMenu = await Menu.findById(req.params.id);
+
+    const data = {
+      name: req.body.name,
+      description:req.body.description,
+    }
+
+    const menuUpdate = await Menu.findByIdAndUpdate(req.params.id, data, { new: true })
+    res.send(menuUpdate)
+
+  } catch (error) {
+         console.error(error);
+         res.status(500).send("Failed to update menu");
+  }
+}
+
+export const deleteMenu = async (req, res) => {
+  try {
+    const menu = await Menu.findById(req.params.id);
+    
+    if (!menu) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Menu not found" });
+    }
+
+    await Menu.findByIdAndDelete(req.params.id)
+    return res.send("Succesfully deleted")
+
+  } catch (error) {
+    console.error("Error deleting Menu:", error);
+  }
+};
+
+export const editItem = async (req, res) => {
+  try {
+    const currentItem = await MenuItem.findById(req.params.id);
+
+    const data = {
+      title: req.body.title,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+    };
+
+    const itemUpdate = await MenuItem.findByIdAndUpdate(req.params.id, data, {new:true});
+    res.send(itemUpdate)
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Failed to update item");
+  }
+};
+
+export const deleteItem = async (req, res) => {
+  try {
+    const item = await MenuItem.findById(req.params.id);
+
+        if (!item) {
+          return res
+            .status(404)
+            .json({ success: false, message: "Item not found" });
+    }
+    
+    await MenuItem.findByIdAndDelete(req.params.id);
+    return res.send("Succesfully deleted");
+  } catch (error) {}
+};
 
